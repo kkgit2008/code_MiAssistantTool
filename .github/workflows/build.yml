@@ -40,7 +40,7 @@ jobs:
       run: |
         docker run --privileged aptman/qus -s -- -p aarch64 arm
         sudo apt-get install -y mingw-w64 libusb-1.0-0-dev libssl-dev libcurl4-openssl-dev
-        git clone https://github.com/rafagafe/tiny-json.git
+        git clone https://github.com/kkgit2008/tiny-json.git
         curl -L -o openssl.zip https://download.firedaemon.com/FireDaemon-OpenSSL/openssl-3.4.0.zip && 7z x openssl.zip -o./openssl && rm openssl.zip
         curl -L -o libusb.7z https://github.com/libusb/libusb/releases/download/v1.0.27/libusb-1.0.27.7z && 7z x libusb.7z -o./libusb && rm libusb.7z
         curl -L -o curl32.zip https://curl.se/windows/dl-8.11.0_1/curl-8.11.0_1-win32-mingw.zip && 7z x curl32.zip -o./curl && rm curl32.zip && mv curl/curl-8.11.0_1-win32-mingw curl/win32
@@ -84,19 +84,19 @@ jobs:
         VERSION=$(grep -oP '#define VERSION "\K[^"]+' miasst.c)
         gh release upload $VERSION ./miasst_windows32.exe ./miasst_windows64.exe ./miasst_ubuntu ./miasst_termux_aarch64 ./miasst_termux_arm --clobber
 
-  build-macos:
-    runs-on: macos-latest
-    steps:
-    - uses: actions/checkout@v4
-    - run: |
-        brew install libusb openssl curl
-        git clone https://github.com/rafagafe/tiny-json.git
+ #  build-macos:
+ #    runs-on: macos-latest
+ #    steps:
+ #    - uses: actions/checkout@v4
+ #    - run: |
+ #        brew install libusb openssl curl
+ #        git clone https://github.com/rafagafe/tiny-json.git
 
-    - name: Build miasst for macOS
-      run: |
-        clang -o miasst_macos miasst.c tiny-json/tiny-json.c -I/System/Volumes/Data/opt/homebrew/Cellar/libusb/1.0.27/include -I/System/Volumes/Data/opt/homebrew/opt/openssl/include -L/System/Volumes/Data/opt/homebrew/Cellar/libusb/1.0.27/lib -L/System/Volumes/Data/opt/homebrew/opt/openssl/lib -I. -lssl -lcrypto -lcurl -lusb-1.0
+ #    - name: Build miasst for macOS
+ #      run: |
+ #        clang -o miasst_macos miasst.c tiny-json/tiny-json.c -I/System/Volumes/Data/opt/homebrew/Cellar/libusb/1.0.27/include -I/System/Volumes/Data/opt/homebrew/opt/openssl/include -L/System/Volumes/Data/opt/homebrew/Cellar/libusb/1.0.27/lib -L/System/Volumes/Data/opt/homebrew/opt/openssl/lib -I. -lssl -lcrypto -lcurl -lusb-1.0
 
-    - name: Upload macOS Build
-      run: |
-        VERSION=$(awk -F'"' '/#define VERSION/ {print $2}' miasst.c)
-        gh release upload $VERSION ./miasst_macos --clobber
+ #    - name: Upload macOS Build
+ #      run: |
+ #        VERSION=$(awk -F'"' '/#define VERSION/ {print $2}' miasst.c)
+ #        gh release upload $VERSION ./miasst_macos --clobber
