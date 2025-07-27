@@ -1,6 +1,7 @@
 #define VERSION "1.2.2"
 #define REPOSITORY "https://github.com/kkgit2008/code_MiAssistantTool"
 
+
 #ifdef _WIN32
 #include <libusb.h>
 #else
