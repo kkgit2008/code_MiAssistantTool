@@ -41,10 +41,10 @@ jobs:
         docker run --privileged aptman/qus -s -- -p aarch64 arm
         sudo apt-get install -y mingw-w64 libusb-1.0-0-dev libssl-dev libcurl4-openssl-dev
         git clone https://github.com/kkgit2008/tiny-json.git
-        curl -L -o openssl.zip https://download.firedaemon.com/FireDaemon-OpenSSL/openssl-3.4.0.zip && 7z x openssl.zip -o./openssl && rm openssl.zip
-        curl -L -o libusb.7z https://github.com/libusb/libusb/releases/download/v1.0.27/libusb-1.0.27.7z && 7z x libusb.7z -o./libusb && rm libusb.7z
-        curl -L -o curl32.zip https://curl.se/windows/dl-8.11.0_1/curl-8.11.0_1-win32-mingw.zip && 7z x curl32.zip -o./curl && rm curl32.zip && mv curl/curl-8.11.0_1-win32-mingw curl/win32
-        curl -L -o curl64.zip https://curl.se/windows/dl-8.11.0_1/curl-8.11.0_1-win64-mingw.zip && 7z x curl64.zip -o./curl && rm curl64.zip && mv curl/curl-8.11.0_1-win64-mingw curl/win64
+        curl -L -o openssl.zip https://download.firedaemon.com/FireDaemon-OpenSSL/openssl-3.5.1.zip && 7z x openssl.zip -o./openssl && rm openssl.zip
+        curl -L -o libusb.7z https://github.com/libusb/libusb/releases/download/v1.0.29/libusb-1.0.29.7z && 7z x libusb.7z -o./libusb && rm libusb.7z
+        curl -L -o curl32.zip https://curl.se/windows/dl-8.15.0_4/curl-8.15.0_4-win32-mingw.zip && 7z x curl32.zip -o./curl && rm curl32.zip && mv curl/curl-8.15.0_4-win32-mingw curl/win32
+        curl -L -o curl64.zip https://curl.se/windows/dl-8.15.0_4/curl-8.15.0_4-win64-mingw.zip && 7z x curl64.zip -o./curl && rm curl64.zip && mv curl/curl-8.15.0_4-win64-mingw curl/win64
 
     - name: Build for Windows
       run: |
