@@ -1,6 +1,6 @@
 <div align="center">
 
-  <a href="https://github.com/offici5l/MiUnlockTool/releases/latest"><img src="https://img.shields.io/badge/MiAssistantTool-%230070FF?style=flat&logo=xiaomi&logoColor=%23FF6900" alt="MiAssistantTool" style="width: 200px; vertical-align: middle;" /> </a><br>
+  <a href="https://github.com/kkgit2008/code_MiAssistantTool/releases/latest"><img src="https://img.shields.io/badge/MiAssistantTool-%230070FF?style=flat&logo=xiaomi&logoColor=%23FF6900" alt="MiAssistantTool" style="width: 200px; vertical-align: middle;" /> </a><br>
 
   It is compatible with all platforms.
 
@@ -19,6 +19,6 @@ in Mi-Assistant mode, without unlocking bootloader:
 
 ___
 
-### [Download ](https://github.com/offici5l/MiAssistantTool/releases/latest)
+### [Download ](https://github.com/kkgit2008/code_MiAssistantTool/releases/latest)
 
 If you need a version for another system ... , you can build it by cloning the repository and compiling it using GCC
